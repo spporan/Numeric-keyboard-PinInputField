@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="payment_create_pin_edit_text" parent="android:Widget.EditText">
+        <item name="android:fontFamily">@font/primary_bold</item>
+        <item name="android:background">@drawable/create_pin_edit_text_background</item>
+        <item name="android:inputType">none</item>
+        <item name="android:gravity">center</item>
+        <item name="maxLines">1</item>
+        <item name="fieldErrorColor">@color/colorSoftRed</item>
+        <item name="activeColor">@color/black</item>
+        <item name="defColor">@color/lighter_grey</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:textSize">@dimen/input_field_text_size</item>
+    </style>
+
+
+    <style name="Keyboard" />
+    <style name="Keyboard.Row">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/row_height</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="Keyboard.Key">
+        <item name="android:layout_width">0px</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/key_button_bg</item>
+        <item name="android:gravity">center</item>
+        <item name="fontFamily">@font/primary</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/key_text_size</item>
+    </style>
+    <style name="Keyboard.removeKey">
+        <item name="android:layout_width">0px</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/key_button_bg</item>
+        <item name="android:gravity">center</item>
+        <item name="fontFamily">@font/icon</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/key_text_size</item>
+    </style>
+</resources>
