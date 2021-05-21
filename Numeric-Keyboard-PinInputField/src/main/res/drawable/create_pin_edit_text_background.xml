@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto" android:color="@android:color/transparent" tools:targetApi="lollipop">
+    <item
+        app:state_error="false"
+        app:state_active_field="false"
+        android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <solid
+                android:color="@color/lighter_grey"
+                />
+            <corners android:radius="@dimen/margin_5" />
+            <size
+                android:width="@dimen/input_field_width"
+                android:height="@dimen/input_field_height"
+                >
+
+            </size>
+
+        </shape>
+    </item>
+    <!--android:state_focused="true"-->
+    <item
+        app:state_active_field="true"
+        app:state_error="false"
+        android:color="@color/black"
+        android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <solid
+                android:color="@color/white"
+                />
+            <stroke
+                android:color="@color/black"
+                android:width="1dp"
+                />
+            <corners android:radius="@dimen/margin_5" />
+            <size
+                android:width="@dimen/input_field_width"
+                android:height="@dimen/input_field_height"
+                >
+            </size>
+        </shape>
+    </item>
+    <item
+        app:state_error="true"
+        app:state_active_field="false"
+        android:color="@color/colorSoftRed"
+        android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <solid
+                android:color="@color/white"
+                />
+            <stroke
+                android:color="@color/colorSoftRed"
+                android:width="1dp"
+                />
+            <corners android:radius="@dimen/margin_5" />
+            <size
+                android:width="@dimen/input_field_width"
+                android:height="@dimen/input_field_height"
+                >
+            </size>
+        </shape>
+    </item>
+
+
+
+</selector>
