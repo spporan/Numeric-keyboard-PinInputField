@@ -1,0 +1,3 @@
+include ':Numeric-Keyboard-PinInputField'
+include ':app'
+rootProject.name = "NumericKeyboardWithPinInputField"
