@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="payment_create_pin_edit_text" parent="android:Widget.EditText">
+    <style name="pin_edit_text_style" parent="android:Widget.EditText">
         <item name="android:fontFamily">@font/primary_bold</item>
+        <item name="android:layout_width">@dimen/input_field_width</item>
+        <item name="android:layout_height">@dimen/input_field_height</item>
         <item name="android:background">@drawable/create_pin_edit_text_background</item>
         <item name="android:inputType">none</item>
         <item name="android:gravity">center</item>

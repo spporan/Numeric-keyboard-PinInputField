@@ -15,13 +15,20 @@
         <attr name="keySpecial" format="string" />
     </declare-styleable>
 
-    <declare-styleable name="error">
+    <declare-styleable name="PinField">
         <attr name="state_error" format="boolean"/>
         <attr name="state_active_field" format="boolean"/>
         <attr name="fieldErrorColor" format="color"/>
         <attr name="defColor" format="color"/>
+        <attr name="defSolidColor" format="color"/>
+        <attr name="activeSolidColor" format="color"/>
         <attr name="activeColor" format="color"/>
-
+        <attr name="fieldHeight" format="dimension" />
+        <attr name="fieldWidth" format="dimension" />
+        <attr name="fieldTextSize" format="dimension" />
+        <attr name="fieldCornerRadius" format="dimension" />
+        <attr name="numberOfField" format="integer" />
+        <attr name="fieldStroke" format="integer"/>
     </declare-styleable>
 
 </resources>
