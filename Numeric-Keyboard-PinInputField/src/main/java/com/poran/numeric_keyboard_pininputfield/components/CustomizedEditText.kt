@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Rect
 import android.graphics.drawable.Drawable
+import android.graphics.drawable.GradientDrawable
 import android.os.Build
 import android.text.Editable
 import android.text.TextWatcher
@@ -14,8 +15,9 @@ import android.util.Log
 import android.widget.EditText
 import com.poran.numeric_keyboard_pininputfield.R
 
+
 @SuppressLint("AppCompatCustomView")
-class PinInputField : EditText {
+class CustomizedEditText : EditText {
     var mIsError = false
         set(value) {
             value.also { field = it }
@@ -28,29 +30,47 @@ class PinInputField : EditText {
             refreshDrawableState()
         }
     var defColor: ColorStateList? = null
+        set(value){
+            value.also { field = it }
+        }
     var activeColor: ColorStateList? = null
+        set(value){
+            value.also { field = it }
+        }
     var errorColor: ColorStateList? = null
+        set(value){
+            value.also { field = it }
+        }
 
 
 
     constructor(context: Context) : this(context, null, 0) {
-        loadAttr(context,null,0)
+        //loadAttr(context,null,0)
         init()
     }
 
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
-        loadAttr(context,attrs,0)
+        //loadAttr(context,attrs,0)
         init()
     }
 
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
-        loadAttr(context,attrs,defStyleAttr)
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(
+        context,
+        attrs,
+        defStyleAttr
+    ) {
+       // loadAttr(context, attrs, defStyleAttr)
         init()
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) : super(context, attrs, defStyleAttr, defStyleRes) {
-        loadAttr(context,attrs,defStyleAttr)
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) : super(
+        context,
+        attrs,
+        defStyleAttr,
+        defStyleRes
+    ) {
+        //loadAttr(context, attrs, defStyleAttr)
         init()
     }
 
@@ -63,10 +83,10 @@ class PinInputField : EditText {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 error = null
                 isActive = text.isNotEmpty() || isCursorVisible
-                if(mIsError && text.isNotEmpty()){
+                if (mIsError && text.isNotEmpty()) {
                     mIsError = false
                 }
-                Log.d("EEE","focused onTextChanged <> $isActive")
+                Log.d("EEE", "focused onTextChanged <> $isActive")
 
             }
 
@@ -87,7 +107,7 @@ class PinInputField : EditText {
         super.onFocusChanged(focused, direction, previouslyFocusedRect)
         isActive = focused || text.isNotEmpty()
         if(focused){
-            Log.d("EEE","focused changed <>")
+            Log.d("EEE", "focused changed <>")
             mIsError = false
         }
     }
@@ -100,7 +120,7 @@ class PinInputField : EditText {
     @SuppressLint("ResourceAsColor")
     override fun onCreateDrawableState(extraSpace: Int): IntArray {
         val drawableState = super.onCreateDrawableState(extraSpace + 1)
-        Log.d("EEE","onCreateDrawableState <>")
+        Log.d("EEE", "onCreateDrawableState <>")
         if (mIsError) {
             mergeDrawableStates(drawableState, STATE_ERROR)
             post {
@@ -127,11 +147,16 @@ class PinInputField : EditText {
         private val STATE_ACTIVE = intArrayOf(R.attr.state_active_field)
     }
 
-    private fun loadAttr(context: Context, attrs: AttributeSet?, defStyleAttr: Int) {
-        val attributes = context.theme.obtainStyledAttributes(attrs, R.styleable.error, defStyleAttr, 0)
-        defColor = attributes.getColorStateList(R.styleable.error_defColor)
-        activeColor = attributes.getColorStateList(R.styleable.error_activeColor)
-        errorColor = attributes.getColorStateList(R.styleable.error_fieldErrorColor)
+    /*private fun loadAttr(context: Context, attrs: AttributeSet?, defStyleAttr: Int) {
+        val attributes = context.theme.obtainStyledAttributes(
+            attrs,
+            R.styleable.PinField,
+            defStyleAttr,
+            0
+        )
+        defColor = attributes.getColorStateList(R.styleable.PinField_defColor)
+        activeColor = attributes.getColorStateList(R.styleable.PinField_activeColor)
+        errorColor = attributes.getColorStateList(R.styleable.PinField_fieldErrorColor)
 
-    }
+    }*/
 }
