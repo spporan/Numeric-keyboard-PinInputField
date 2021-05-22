@@ -3,63 +3,20 @@
     <item
         app:state_error="false"
         app:state_active_field="false"
+        android:drawable="@drawable/default_state"
         android:id="@android:id/background">
-        <shape android:shape="rectangle">
-            <solid
-                android:color="@color/lighter_grey"
-                />
-            <corners android:radius="@dimen/margin_5" />
-            <size
-                android:width="@dimen/input_field_width"
-                android:height="@dimen/input_field_height"
-                >
-
-            </size>
-
-        </shape>
     </item>
-    <!--android:state_focused="true"-->
     <item
         app:state_active_field="true"
         app:state_error="false"
-        android:color="@color/black"
+        android:drawable="@drawable/active_state"
         android:id="@android:id/background">
-        <shape android:shape="rectangle">
-            <solid
-                android:color="@color/white"
-                />
-            <stroke
-                android:color="@color/black"
-                android:width="1dp"
-                />
-            <corners android:radius="@dimen/margin_5" />
-            <size
-                android:width="@dimen/input_field_width"
-                android:height="@dimen/input_field_height"
-                >
-            </size>
-        </shape>
     </item>
     <item
         app:state_error="true"
         app:state_active_field="false"
-        android:color="@color/colorSoftRed"
+        android:drawable="@drawable/error_state"
         android:id="@android:id/background">
-        <shape android:shape="rectangle">
-            <solid
-                android:color="@color/white"
-                />
-            <stroke
-                android:color="@color/colorSoftRed"
-                android:width="1dp"
-                />
-            <corners android:radius="@dimen/margin_5" />
-            <size
-                android:width="@dimen/input_field_width"
-                android:height="@dimen/input_field_height"
-                >
-            </size>
-        </shape>
     </item>
 
 
